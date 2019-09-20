@@ -1,6 +1,6 @@
 //TODO: STEP 1 - Import the useState hook.
 import React from "react";
-import { render } form "react-dom";
+import { render } from "react-dom";
 import "./App.css";
 import BottomRow from "./BottomRow";
 
@@ -25,7 +25,7 @@ function App() {
           <div className="timer">00:03</div>
           <div className="away">
             <h2 className="away__name">Tigers</h2>
-            <div className="away__score">3{awayCount}</div>
+            <div className="away__score">{awayCount}</div>
           </div>
         </div>
         <BottomRow />
@@ -33,12 +33,12 @@ function App() {
       <section className="buttons">
         <div className="homeButtons">
           {/* TODO STEP 4 - Now we need to attach our state setter functions to click listeners. */}
-          <button className="homeButtons__touchdown">Home Touchdown</button>
-          <button className="homeButtons__fieldGoal">Home Field Goal</button>
+          <button className="homeButtons__touchdown" onClick={() => {setHomeCount(homeCount + 7)}}>Home Touchdown</button>
+          <button className="homeButtons__fieldGoal" onClick={() => {setHomeCount(homeCount + 3)}}>Home Field Goal</button>
         </div>
         <div className="awayButtons">
-          <button className="awayButtons__touchdown">Away Touchdown</button>
-          <button className="awayButtons__fieldGoal">Away Field Goal</button>
+          <button className="awayButtons__touchdown" onClick={() => {setAwayCount(awayCount + 7)}}>Away Touchdown</button>
+          <button className="awayButtons__fieldGoal" onClick={() => {setAwayCount(awayCount + 3)}}>Away Field Goal</button>
         </div>
       </section>
     </div>
